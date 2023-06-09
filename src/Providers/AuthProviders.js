@@ -20,6 +20,7 @@ function AuthProvider({ children }) {
     }
 
     const googleLogin = () => {
+        setLoader(true);
         return signInWithPopup(auth, googleProvider);
     }
 
@@ -43,6 +44,7 @@ function AuthProvider({ children }) {
     }, [])
 
     const updateUser = (name, photo) => {
+        setLoader(true);
         return updateProfile(auth.currentUser, { displayName: name, photoURL: photo });
     }
 
