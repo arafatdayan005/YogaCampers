@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import login from './../../Images/62773-yoga-developer.json'
 import { AuthContext } from '../../Providers/AuthProviders'
 import { GoogleAuthProvider } from 'firebase/auth'
+import { saveUser } from '../../API/auth';
 
 function Login() {
     const [show, setShow] = useState(false)
@@ -42,6 +43,7 @@ function Login() {
                 const user = result.user;
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
+                saveUser(user)
                 navigate(from, { replace: true })
             }).catch((error) => {
                 // Handle Errors here.

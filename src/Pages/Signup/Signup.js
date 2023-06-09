@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../Providers/AuthProviders'
+import { saveUser } from '../../API/auth';
 
 function Signup() {
     const [show, setShow] = useState(false)
@@ -24,6 +25,7 @@ function Signup() {
                 updateUser(name, photo)
                     .then(() => {
                         // Profile updated!
+                        saveUser(user)
                         navigate('/')
                     }).catch((error) => {
                         // An error occurred
