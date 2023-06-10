@@ -11,6 +11,7 @@ import ErrorPage from './Components/ErrorPage';
 import AuthProvider from './Providers/AuthProviders';
 import Dashboard from './Pages/DashBoard/Dashboard';
 import AddClass from './Pages/DashBoard/AddClass';
+import Classes from './Pages/Classes/Classes';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/classes',
+        element: <Classes></Classes>
       },
       {
         path: '/login',

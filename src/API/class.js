@@ -10,3 +10,9 @@ export const addClass = (data) => {
         .then(data => console.log(data))
         .catch(err => console.log(err))
 }
+
+export const getClass = async () => {
+    const classes = await fetch(`http://localhost:5000/classes`)
+    const data = await classes.json()
+    return data        
+}
