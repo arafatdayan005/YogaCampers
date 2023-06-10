@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import Signup from './Pages/Signup/Signup';
 import ErrorPage from './Components/ErrorPage';
 import AuthProvider from './Providers/AuthProviders';
+import Dashboard from './Pages/DashBoard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,21 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup></Signup>
-  }
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: '/dashboard/instructor/myclasses',
+        element: <Home></Home>
+      },
+      {
+        path: '/dashboard/instructor/newclass',
+        element: <Login></Login>
+      },
+    ]
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
