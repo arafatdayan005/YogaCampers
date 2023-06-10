@@ -10,6 +10,7 @@ import Signup from './Pages/Signup/Signup';
 import ErrorPage from './Components/ErrorPage';
 import AuthProvider from './Providers/AuthProviders';
 import Dashboard from './Pages/DashBoard/Dashboard';
+import AddClass from './Pages/DashBoard/AddClass';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard/instructor/newclass',
-        element: <Login></Login>
+        element: <AddClass></AddClass>
       },
     ]
   },
