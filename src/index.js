@@ -12,6 +12,7 @@ import AuthProvider from './Providers/AuthProviders';
 import Dashboard from './Pages/DashBoard/Dashboard';
 import AddClass from './Pages/DashBoard/AddClass';
 import Classes from './Pages/Classes/Classes';
+import MyClasses from './Pages/DashBoard/MyClasses';
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard/instructor/myclasses',
-        element: <Home></Home>
+        element: <MyClasses></MyClasses>
       },
       {
         path: '/dashboard/instructor/newclass',

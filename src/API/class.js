@@ -16,3 +16,8 @@ export const getClass = async () => {
     const data = await classes.json()
     return data        
 }
+
+export const instructorClasses = async (email) => {
+    const res = await fetch(`http://localhost:5000/classes/${email}`)
+    return await res.json()
+}

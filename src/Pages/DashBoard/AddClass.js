@@ -22,12 +22,13 @@ function AddClass() {
                 name: user?.displayName,
                 Photo: user?.photoURL,
                 email: user?.email,
-            },            
+            },
             description,
-            price,
-            seat
+            price: parseFloat(price),
+            seat: parseInt(seat),
+            status: "pending"
         }
-        
+
         addClass(data)
     }
 
@@ -56,11 +57,11 @@ function AddClass() {
                         <div>
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Available Seat</label>
                             <input type="number" name='seat' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-500 dark:focus:border-emerald-500" required />
-                        </div> 
+                        </div>
                         <div>
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
                             <input type="number" name='price' step="0.01" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-500 dark:focus:border-emerald-500" required />
-                        </div>                        
+                        </div>
                     </div>
                     <div className="mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
