@@ -14,3 +14,10 @@ export const saveUser = (user) => {
         .then(res => res.json())
         .then(data => console.log(data))
 }
+
+//get role of a user
+export const getRole = async (email) => {
+    const res = await fetch(`http://localhost:5000/users/${email}`)
+    const user = await res.json()
+    return user?.role
+}
