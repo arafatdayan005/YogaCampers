@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getClass } from '../../API/class'
+import { getApprovedClasses } from '../../API/class'
 import ClassCards from './ClassCards'
 
 function Classes() {
@@ -8,7 +8,7 @@ function Classes() {
 
     useEffect(() => {
         setLoading(true)
-        getClass()
+        getApprovedClasses()
             .then(data => {
                 setClassData(data)
                 setLoading(false)
