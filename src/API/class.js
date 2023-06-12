@@ -21,3 +21,18 @@ export const instructorClasses = async (email) => {
     const res = await fetch(`http://localhost:5000/classes/${email}`)
     return await res.json()
 }
+
+export const classStatus = async (id, status) => {
+    const data = {
+        status: status
+    }
+
+    const res = await fetch(`http://localhost:5000/classes/${id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    return await res.json()
+}
