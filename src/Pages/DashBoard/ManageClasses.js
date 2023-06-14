@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { classStatus, getClass } from '../../API/class'
+import { classStatus, getAllClasses } from '../../API/class'
 
 function ManageClasses() {
     const [data, setData] = useState([])
     const [reload, setReload] = useState(false)
 
     useEffect(() => {
-        getClass()
+        getAllClasses()
             .then(data => setData(data))
     }, [reload])
 

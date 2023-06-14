@@ -29,7 +29,7 @@ function ClassCards({ data, handleSelect, userEmail, role }) {
                     handleSelect(_id, name, image, price, instructor)
                     setReload(!reload)
                     setDisabled(true)
-                }} className={`mx-auto bg-lime-500 ${userEmail === studentEmail || disabled ? "bg-lime-600" : "hover:bg-lime-600"} ${role === "instructor" ? "bg-lime-500 hover:bg-lime-500 cursor-not-allowed" : ""} px-6 py-2 rounded-full text-white`} disabled={userEmail === studentEmail || disabled || role === "instructor"}>{userEmail === studentEmail || disabled ? "Selected" : "Select"}</button>
+                }} className={`mx-auto bg-lime-500 ${userEmail === studentEmail || disabled ? "bg-lime-600" : "hover:bg-lime-600"} ${role === "instructor" ? "bg-lime-500 hover:bg-lime-500 cursor-not-allowed" : ""} px-6 py-2 rounded-full text-white`} disabled={userEmail === studentEmail || disabled || role === "instructor"}>{ (role && userEmail === studentEmail) || (role && disabled) ? "Selected" : "Select"}</button>
             </div>
         </div>
     )

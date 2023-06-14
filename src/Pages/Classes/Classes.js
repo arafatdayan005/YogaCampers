@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { getApprovedClasses, selectClass } from '../../API/class'
 import ClassCards from './ClassCards'
 import { AuthContext } from '../../Providers/AuthProviders'
+import { useNavigate } from 'react-router-dom'
 
 function Classes() {
     const [classData, setClassData] = useState([])
     const [reload, setReload] = useState(false)
     const { user, role } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     useEffect(() => {
         getApprovedClasses()
@@ -16,18 +18,25 @@ function Classes() {
     }, [user, reload])
 
     const handleSelect = (id, name, image, price, instructor) => {
-        const data = {
-            class_id: id,
-            className: name,
-            classImage: image,
-            price: price,
-            instructor: instructor,
-            studentName: user.displayName,
-            studentEmail: user.email,
+        if (!role) {
+            navigate("/login")
+        } else {
+            const data = {
+                class_id: id,
+                className: name,
+                classImage: image,
+                price: price,
+                instructor: instructor,
+                studentName: user.displayName,
+                studentEmail: user.email,
+                enrolled: false
+            }
+
+            selectClass(data)
+            setReload(!reload)
         }
 
-        selectClass(data)
-        setReload(!reload)
+
     }
 
     return (

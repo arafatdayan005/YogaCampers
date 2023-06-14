@@ -72,8 +72,8 @@ function Signup() {
                     </p>
 
                     <div className="relative">
-                        <label className="block mb-2 text-sm font-medium text-green-400 dark:text-white" htmlFor="file_input">Upload Photo</label>
-                        <input name="photo" className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file" />
+                        <input type="text" name="photo" id="floating_outlined" className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border-1 border-green-400 appearance-none  focus:outline-none focus:ring-0 focus:border-green-400 peer mb-6" placeholder=" " required />
+                        <label htmlFor="floating_outlined" className="absolute text-md text-green-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:px-2 peer-focus:text-green-400 peer-focus:dark:text-green-400 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1 peer-focus:bg-gray-100">Enter Photo URL</label>
                     </div>
 
                     <br />

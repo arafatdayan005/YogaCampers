@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../Providers/AuthProviders'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Sidebar() {
     const [toggle, setToggle] = useState(false)
     const { user, loader, role, logOut } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     if (loader) {
         <p>loading..</p>
@@ -81,7 +82,10 @@ function Sidebar() {
                                 <Link to="/" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-gray-700">
                                     <span className="ml-3 pr-24">Back to Home</span>
                                 </Link>
-                                <button onClick={() => logOut()} to="/" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-gray-700">
+                                <button onClick={() => {
+                                    logOut()
+                                    navigate("/")
+                                }} to="/" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-gray-700">
                                     <span className="ml-3 pr-36">Logout</span>
                                 </button>
                             </div>

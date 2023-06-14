@@ -6,7 +6,7 @@ export const saveUser = (user) => {
         photo: user.photoURL
     }
 
-    fetch(`http://localhost:5000/users/${user?.email}`, {
+    fetch(`https://summer-camp-server-navy-zeta.vercel.app/users/${user?.email}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
@@ -20,28 +20,27 @@ export const saveUser = (user) => {
                     role: "student"
                 }
 
-                fetch(`http://localhost:5000/users/${user?.email}`, {
+                fetch(`https://summer-camp-server-navy-zeta.vercel.app/users/${user?.email}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json',
                     },
                     body: JSON.stringify(setRole),
                 })
-                .then(res => res.json())
-                .then(data => console.log(data))
+                    .then(res => res.json())
+                    .then(data => console.log(data))
             }
         })
 }
 
 //get role of a user
 export const getRole = async (email) => {
-    const res = await fetch(`http://localhost:5000/users/${email}`)
-    const user = await res.json()
-    return user?.role
+    const res = await fetch(`https://summer-camp-server-navy-zeta.vercel.app/users/${email}`)
+    return await res.json()
 }
 
 export const getAllUsers = async (email) => {
-    const res = await fetch(`http://localhost:5000/users`)
+    const res = await fetch(`https://summer-camp-server-navy-zeta.vercel.app/users`)
     const user = await res.json()
     return user
 }
@@ -53,7 +52,7 @@ export const changeRole = async (id, status) => {
 
     console.log(id, data)
 
-    const res = await fetch(`http://localhost:5000/changeRole/${id}`, {
+    const res = await fetch(`https://summer-camp-server-navy-zeta.vercel.app/changeRole/${id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
