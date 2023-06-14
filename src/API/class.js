@@ -42,3 +42,18 @@ export const classStatus = async (id, status) => {
     })
     return await res.json()
 }
+
+export const selectClass = async (data) => {
+    const res = await fetch(`http://localhost:5000/classes/selected`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        return res.json()
+}
+
+export const getSelectedClass = async (id, email) => {
+    return fetch(`http://localhost:5000/classes/selected/${id}/${email}`)
+}
