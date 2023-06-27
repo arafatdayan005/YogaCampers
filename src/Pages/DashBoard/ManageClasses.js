@@ -30,9 +30,9 @@ function ManageClasses() {
 
     return (
         <>
-            <p className='text-center font-bold text-5xl tracking-tight mt-10 font-serif'>All Classes</p>
-            <div className='max-w-[85%] mx-auto mt-8'>
-                <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-16">
+            <p className='text-center font-bold text-5xl tracking-tight pt-10 font-serif dark:text-white'>All Classes</p>
+            <div className='max-w-[85%] mx-auto mt-8 pb-16'>
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <div className='flex justify-between items-center'>
                         <div className="pb-4 bg-white dark:bg-gray-900">
                             <label htmlFor="table-search" className="sr-only">Search</label>
@@ -43,7 +43,7 @@ function ManageClasses() {
                                 <input type="text" id="table-search" className="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-emerald-500 focus:border-emerald-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-500 dark:focus:border-emerald-500" placeholder="Search for classes" />
                             </div>
                         </div>
-                        <button className='py-2 px-4 bg-emerald-500 text-white me-8 rounded-lg'>Sort by</button>
+                        <button className='py-2 px-4 bg-emerald-500 text-white rounded-lg'>Sort by</button>
                     </div>
 
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

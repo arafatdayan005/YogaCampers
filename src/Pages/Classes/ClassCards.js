@@ -15,14 +15,14 @@ function ClassCards({ data, handleSelect, userEmail, role }) {
     }, [reload, userEmail, data._id])
 
     return (
-        <div className='shadow-lg rounded-xl bg-lime-50'>
+        <div className='shadow-lg rounded-xl bg-lime-100 dark:bg-teal-800'>
             <img className='h-64 w-full rounded-xl  rounded-bl-none rounded-br-none' src={image} alt="" />
             <div className='px-8 py-6 text-center'>
-                <p className='font-semibold text-3xl text-gray-600'> {name} </p>
-                <p className='font-medium text-lg text-gray-600 mt-2'> Instructor: {instructor.name} </p>
+                <p className='font-semibold text-3xl text-gray-600 dark:text-white'> {name} </p>
+                <p className='font-medium text-lg text-gray-600 dark:text-white mt-2'> Instructor: {instructor.name} </p>
                 <div className='flex justify-around mt-4'>
-                    <p className='text-lg text-gray-600'> Available Seat: {seat - enrolled} </p>
-                    <p className='text-lg text-gray-600'> Price: ${price} </p>
+                    <p className='text-lg text-gray-600 dark:text-white'> Available Seat: {seat - enrolled} </p>
+                    <p className='text-lg text-gray-600 dark:text-white'> Price: ${price} </p>
                 </div>
                 <p className='text-left my-4'> Details: {description.slice(0, 180)}... </p>
                 <button onClick={() => {

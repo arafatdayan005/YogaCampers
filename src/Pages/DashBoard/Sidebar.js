@@ -68,11 +68,11 @@ function Sidebar() {
                 </button>
 
                 <aside className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0">
-                    <div className="h-full px-3 py-4 overflow-y-auto bg-emerald-50 dark:bg-gray-800">
+                    <div className="h-full px-3 py-4 overflow-y-auto bg-emerald-100 dark:bg-gray-800">
                         <p className='text-center text-3xl font-semibold text-green-500'>YogaCampers</p>
                         <div className='my-8 flex flex-col items-center'>
                             <img className='rounded-full' src={user?.photoURL} alt="" />
-                            <p className='text-xl font-semibold mt-4'> {user?.displayName} </p>
+                            <p className='text-xl font-semibold mt-4 dark:text-white'> {user?.displayName} </p>
                             <p className='capitalize bg-emerald-400 text-white px-2 rounded-full mt-2'> {role} </p>
                         </div>
 

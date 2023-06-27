@@ -26,15 +26,15 @@ function AddClass() {
             description,
             price: parseFloat(price),
             seat: parseInt(seat),
+            enrolled: 0,
             status: "pending"
         }
-
         addClass(data)
     }
 
     return (
         <>
-            <p className='text-center font-bold text-5xl tracking-tight my-12 font-serif'>Add A New Class</p>
+            <p className='text-center font-bold text-5xl tracking-tight py-12 font-serif dark:text-white'>Add A New Class</p>
             <div className='max-w-[80%] mx-auto mb-8'>
                 <form onSubmit={handleSubmit}>
                     <div className="grid gap-6 mb-6 md:grid-cols-2">

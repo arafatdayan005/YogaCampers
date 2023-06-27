@@ -6,7 +6,7 @@ function Dashboard() {
     return (
         <>
             <Sidebar></Sidebar>
-            <div className='ps-64'>
+            <div className='ps-64 min-h-screen dark:bg-gray-900'>
                 <Outlet></Outlet>
             </div>
         </>

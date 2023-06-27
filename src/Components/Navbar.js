@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProviders'
+import { DarkThemeToggle } from 'flowbite-react'
 
 function Navbar() {
     const [toggle, setToggle] = useState(false)
@@ -20,28 +21,29 @@ function Navbar() {
             <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed w-full z-10">
                 <div className="flex flex-wrap items-center justify-between mx-auto px-12">
                     <div className="flex items-center">
-                        <img src="https://cdn.shopify.com/s/files/1/2622/4518/files/valka-yoga-logo.png" className="h-20" />
+                        <img src="https://cdn.shopify.com/s/files/1/2622/4518/files/valka-yoga-logo.png" className="h-20" alt='' />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">YogaCampers</span>
                     </div>
-                    <div className='md:order-2'>
+                    <div className='flex space-x-4 md:order-2'>
+                        <DarkThemeToggle />
                         {user ? <div className="relative" onClick={() => setToggle(!toggle)}>
-                            {user.photoURL ? <img className='h-12 rounded-full cursor-pointer' src={user.photoURL} alt="" /> : <img className='h-12 rounded-full cursor-pointer' src="https://www.pngmart.com/files/22/User-Avatar-Profile-PNG-Isolated-Transparent.png" alt="" />}
+                            {user?.photoURL ? <img className='h-12 rounded-full cursor-pointer' src={user?.photoURL} referrerPolicy="no-referrer" alt="" /> : <img className='h-12 rounded-full cursor-pointer' src="https://www.pngmart.com/files/22/User-Avatar-Profile-PNG-Isolated-Transparent.png" alt="" />}
                             {toggle && (
                                 <div className="absolute right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-52 dark:bg-gray-700 dark:divide-gray-600">
                                     <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                                        <div>{user.displayName}</div>
-                                        <div className="font-medium truncate">{user.email}</div>
+                                        <div>{user?.displayName}</div>
+                                        <div className="font-medium truncate">{user?.email}</div>
                                     </div>
                                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
                                         <li>
                                             <Link to="/dashboard" className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
                                         </li>
                                         <li>
-                                            <a href="#" className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                            <Link className="block px-4 py-2 hover:bg-green-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</Link>
                                         </li>
                                     </ul>
                                     <div className="py-2">
-                                        <a onClick={handleLogOut} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log out</a>
+                                        <Link onClick={handleLogOut} className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log out</Link>
                                     </div>
                                 </div>
                             )

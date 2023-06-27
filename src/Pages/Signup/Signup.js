@@ -33,14 +33,12 @@ function Signup() {
                     });
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
+                
             });
     }
 
     return (
-        <section className='2xl:h-[100vh] relative flex justify-center items-center'>
+        <section className='2xl:h-[100vh] relative flex justify-center items-center dark:bg-gray-900'>
             <div className="w-full px-4 my-8 sm:px-6 sm:py-8 lg:px-8 lg:w-96 bg-gray-100 rounded-xl">
                 <div className="mx-auto max-w-lg text-center">
                     <h2 className='text-center pb-5 text-3xl text-green-400 font-extrabold'>Sign Up</h2>

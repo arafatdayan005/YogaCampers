@@ -40,9 +40,9 @@ function Classes() {
     }
 
     return (
-        <div className='pt-20 md:w-[90%] mx-auto'>
-            <p className='text-4xl font-serif my-8 text-gray-600'>Available Classes</p>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-8 mb-12'>
+        <div className='pt-20 md:w-[90%] mx-auto dark:text-white'>
+            <p className='text-4xl font-serif my-8 text-gray-600 dark:text-white'>Available Classes</p>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-8 pb-12'>
                 {
                     classData.map(data =>
                         <ClassCards key={data._id} data={data} handleSelect={handleSelect} userEmail={user?.email} role={role} ></ClassCards>

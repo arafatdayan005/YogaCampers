@@ -13,9 +13,9 @@ function MyClasses() {
 
     return (
         <>
-            <p className='text-center font-bold text-5xl tracking-tight mt-10 font-serif'>My Classes</p>
-            <div className='max-w-[85%] mx-auto mt-8'>
-                <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-16">
+            <p className='text-center font-bold text-5xl tracking-tight pt-10 font-serif dark:text-white'>My Classes</p>
+            <div className='max-w-[85%] mx-auto mt-8 pb-16'>
+                <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <div className='flex justify-between items-center'>
                         <div className="pb-4 bg-white dark:bg-gray-900">
                             <label htmlFor="table-search" className="sr-only">Search</label>
