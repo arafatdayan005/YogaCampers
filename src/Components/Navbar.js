@@ -112,9 +112,9 @@ function Navbar() {
                       ? "block py-2 pl-3 pr-4 text-white bg-green-500 rounded md:bg-transparent md:text-green-500 md:p-0 md:dark:text-lime-400"
                       : "block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-500 md:p-0 dark:text-white md:dark:hover:text-green-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   }
-                  to="/instructor"
+                  to="/trainers"
                 >
-                  Instructer
+                  Trainers
                 </NavLink>
               </li>
               <li>
@@ -180,10 +180,10 @@ function Navbar() {
                     ? "block py-2 pl-3 pr-4 text-white bg-green-500 rounded md:p-4"
                     : "block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100  md:hover:text-green-500 md:p-4 dark:text-white  dark:hover:bg-green-700 dark:hover:text-white  dark:border-gray-700"
                 }
-                to="/instructer"
+                to="/trainers"
                 onClick={() => setNav(!nav)}
               >
-                Instructer
+                Trainers
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
