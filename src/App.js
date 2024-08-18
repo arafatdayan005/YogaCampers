@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="pt-12 lg:pt-20 dark:bg-teal-950">
+      <div className="pt-12 lg:pt-20 dark:bg-teal-950 duration-500">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
