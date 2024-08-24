@@ -18,6 +18,7 @@ import ManageUsers from './Pages/DashBoard/ManageUsers';
 import SelectedClasses from './Pages/DashBoard/SelectedClasses';
 import EnrolledClasses from './Pages/DashBoard/EnrolledClasses';
 import Trainers from './Pages/Trainers/Trainers';
+import Contact from './Pages/Contact/Contact';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/classes',
         element: <Classes></Classes>
+      },
+      {
+        path: '/contact',
+        element: <Contact />
       },
       {
         path: '/login',
